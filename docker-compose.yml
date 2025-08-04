@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  story-weaver:
+    build: .
+    ports:
+      - "8000:8000"  # Backend API
+      - "5173:5173"  # Frontend dev server
+    volumes:
+      - ./backend:/app/backend  # Mount backend for live reloading
+      - ./src:/app/src          # Mount frontend for live reloading
+      - ./public:/app/public    # Mount public assets
+    environment:
+      - PYTHONUNBUFFERED=1
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true 
