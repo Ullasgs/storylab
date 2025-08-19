@@ -6,7 +6,6 @@ from flask_cors import CORS
 from transformers import AutoProcessor, AutoTokenizer, AutoModelForCausalLM
 from langgraph.graph import StateGraph
 
-# --- Model and Workflow Setup ---
 model_id = "ibm-granite/granite-4.0-tiny-preview"
 
 processor = AutoProcessor.from_pretrained(model_id)
